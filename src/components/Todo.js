@@ -49,7 +49,7 @@ function Todo() {
 	const [tasks, setTasks] = useState(data);
   const [tasksRemaining, setTasksRemaining] = useState(0);
 
-  useEffect(() => { setTasksRemaining(tasks.filter(task => !task.complete).length) });
+  useEffect(() => { setTasksRemaining(tasks.filter(task => !task.complete).length) }, [tasks]);
 
 	const addTask = (title) => {
 		const newTasks = [...tasks, { title, completed: false }];
